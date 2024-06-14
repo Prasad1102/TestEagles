@@ -1,0 +1,44 @@
+{% extends "baseAdmin.html" %}
+{% block content %}
+<div class="container mt-5">
+  <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!--csrf_token check that data is going from this server -->
+    <!-- enctype="multipart/form-data" is used to send an image to backend if not present only text will go to backend and image will not -->
+    <h3>Add Lesson</h3>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <div class="alert alert-primary" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <hr>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Lesson Title</label>
+        <input type="text" class="form-control" value="{{lesson.title}}" name="title" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea class="form-control" name="content" rows="5" required>{{ lesson.content }}</textarea>
+        </div>
+      <div class="mb-3">
+        <label class="form-label">Subject</label>
+        <div class="input-group mb-3">
+          <select class="form-select" name="subject" value="{{lesson.subject}}" id="inputGroupSelect03"
+            aria-label="Example select with button addon">
+            <option selected>Choose...</option>
+            {% for subject in subjects %}
+            <option value="{{ subject.id }}">{{ subject.subject_name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </form>
+</div>
+{% endblock %}

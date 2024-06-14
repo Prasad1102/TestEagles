@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block start %}
+<style>
+  .container {
+    margin-top: 50px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>About This Website</h1>
+      <p>This website is created by Prasad Dattatray Shelke on June 13, 2024, for Python Learning purposes.</p>
+      <p>Currently, this website doesn't have that good content, but we will definitely be adding Editor.js for adding
+        the best content. We will also provide programming language compilers in the future.</p>
+      <p>If you want to visit more content and projects by Prasad Shelke, you can visit <a
+          href="https://prasaddshelke.netlify.app/" target="_blank">his personal website</a> and check out his <a
+          href="https://github.com/Prasad1102" target="_blank">GitHub account</a>.</p>
+      <p>Stay tuned for more updates and features!</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block start %}
+<style>
+  body {
+    background-image: url('../static/Images/carousel-2.jpg');
+    background-size: 1835px auto;
+    background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  z-index: -1;
+}
+  .blue-colour-text{
+    color: rgba(10, 49, 78, 0.849);
+    font-size: 25px;
+    font-family: "Merriweather", serif;
+  }
+  .imp-text-container{
+    font-family: "DM Serif Display", serif;
+    font-weight: 800;
+    font-size: 75px;
+  }
+  .sub-imp-text-container{
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    color: rgb(46, 36, 63);
+  }
+  .containerTop{
+    margin-top: 90px;
+    height: 762px;
+  }
+  .containerCards{
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+    padding: 30px;
+  }
+  .cards{
+    background-color:rgb(240, 251, 252);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .cards:hover {
+    background-color: rgb(42, 234, 252); /* Hover background color */
+    transform: scale(1.1); /* Increase size by 10% on hover */
+    transition-delay: 0.2s; /* Delay the transition by 0.2 seconds */
+  }
+  .card-title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Source Serif 4", serif;
+    color: black;
+  }
+  .card-text{
+    font-size: 16px;
+    color: rgb(78, 78, 78);
+    font-family: "Cormorant", serif;
+  }
+
+  @media (max-width: 915px) {
+  body {
+    background-image: none;
+  }
+  .imp-text-container{
+    font-size: 45px;
+  }
+  .sub-imp-text-container{
+    font-size: 20px;
+  }
+
+}
+
+</style>
+  <!-- <h1>Hello Welcome To Elerning</h1>
+  {% for sub in subject%}
+    <a href="/lesson/{{sub.id}}">{{sub}}</a>
+  {% endfor %} -->
+  <div class="container containerTop">
+    <div class="row">
+      <div class="col-10">
+        <span class="blue-colour-text">
+          Best Online Courses
+        </span>
+        <div class="imp-text-container">
+          <p>The Best Online Lerning Platform</p>
+        </div>
+        <div class="sub-imp-text-container">
+          <p>Unlock your potential in the ever-evolving world of computer science. Learn, explore, and create with us.</p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <a href="/displayCourse" class="btn btn-info">Start Lerning</a>
+            </div>
+            {% if not request.user.is_authenticated %}
+            <div class="col-2">
+              <a href="#" class="btn btn-light">Create Account</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="containerCards">
+  <div class="container">
+      <div class="row">
+        <div class="col">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body cards">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-mortarboard"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z" />
+                        <path
+                          d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z" />
+                      </svg>
+                      <h5 class="card-title">Skilled Instructor</h5>
+                      <p class="card-text">Benefit from our skilled instructors and Admins who curate the best content and ensure high-quality learning experiences.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body cards">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-globe2"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z" />
+                      </svg>
+                      <h5 class="card-title">Online Lerning</h5>
+                      <p class="card-text">Discover the convenience of learning from home with our online courses, designed to empower students with flexibility
+                      and expert guidance.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body cards">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                      </svg>
+                      <h5 class="card-title">Personalized Paths</h5>
+                      <p class="card-text">Tailor your learning journey with personalized paths that cater to your goals and interests, empowering you to succeed.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body cards">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-book"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                      </svg>
+                      <h5 class="card-title">Expert Support</h5>
+                      <p class="card-text">Receive expert guidance and support from dedicated instructors who are committed to your learning and academic success.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

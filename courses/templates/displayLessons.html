@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block start %}
+<style>
+  .lesson-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 30px;
+    font-family: "Cormorant", serif;
+    font-weight: 100;
+    color: rgb(85, 85, 85);
+  }
+
+  .lesson hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 2px solid #8f8f8f;
+  }
+
+  .lesson {
+    margin-bottom: 20px;
+  }
+
+  .subject-name{
+    font-size: 50px;
+     font-family: "Merriweather", serif;
+  }
+</style>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <p class="subject-name">{{subject.subject_name}}</p>
+      {% for lesson in lessons %}
+      <div class="lesson">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a href="/chapter/{{lesson.id}}" class="lesson-link">{{ lesson.title }}</a>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+              <a href="/chapter/{{lesson.id}}" class="lesson-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right"
+                viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                </svg>
+              </a>
+            </div>
+            <hr>
+          </div>
+        </div>
+        
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

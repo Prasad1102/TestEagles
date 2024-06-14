@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block start %}
+<style>
+  .card-title{
+    text-decoration: none;
+    color: black;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .card-body a{
+    text-decoration: none;
+  }
+  .container{
+    margin-top: 60px;
+  }
+  .courses{
+    color: black;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+</style>
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- Loop through subject -->
+    <h4 class="courses">Courses</h4>
+    {% for subjects in subject %}
+    <div class="col-md-4 mb-3 d-flex justify-content-center">
+      <div class="card" style="width: 18rem;">
+        {% if subjects.subject_image %}
+        <a href="/lessons/{{subjects.id}}"><img src="{{ subjects.subject_image.url }}" class="card-img-top"></a>
+        {% else %}
+        <!-- Placeholder image or text if no image available -->
+        <div class="text-center py-4">No Image</div>
+        {% endif %}
+        <div class="card-body">
+        <a href="/lessons/{{subjects.id}}"><h5 class="card-title text-center">{{ subjects.subject_name }}</h5></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

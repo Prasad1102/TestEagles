@@ -1,0 +1,26 @@
+{% extends "baseAdmin.html" %}
+{% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Buttons</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for sub in subject %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{sub.subject_name}}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <a href="/editSubject/{{sub.id}}" class="btn btn-outline-success">Edit</a>
+          <a href="/deleteSubject/{{sub.id}}" class="btn btn-outline-danger">Delete</a>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

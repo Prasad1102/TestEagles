@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block start %}
+<style>
+  .lesson {
+    margin-bottom: 20px;
+  }
+
+  .lesson hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  h5 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: black;
+    font-family: "Merriweather", serif;
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: "Playfair Display", serif;
+  }
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #8f8f8f;
+  }
+</style>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      {% for les in lesson %}
+      <div class="lesson">
+        <h5>{{ les.title }}</h5>
+        <hr>
+        <p>{{ les.content }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
