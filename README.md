@@ -16,16 +16,16 @@ Welcome to the TestEagles eLearning Platform repository! This project aims to pr
 ## Screenshots
 
 ### Home Page
-![Home Page](path/to/homepage-image.png)
+![Home Page](courses/static/Images/homePage.png)
 
 ### Courses Page
-![Courses Page](path/to/courses-page-image.png)
+![Courses Page](courses/static/Images/coursePage.png)
 
 ### Course Chapters Page
-![Course Chapters Page](path/to/course-chapters-page-image.png)
+![Course Chapters Page](courses/static/Images/courseLessonPage.png)
 
 ### Lesson Page
-![Lesson Page](path/to/lesson-page-image.png)
+![Lesson Page](courses/static/Images/LessonPage.png)
 
 ## Getting Started
 
