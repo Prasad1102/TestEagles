@@ -33,7 +33,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
--Python 3.8.10
--Django 4.2.13
--Virtualenv (optional but recommended)
+- Python 3.8.10
+- Django 4.2.13
+- Virtualenv (optional but recommended)
 
