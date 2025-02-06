@@ -1,6 +1,7 @@
 # TestEagles
 
-Welcome to the TestEagles eLearning Platform repository! This project aims to provide a comprehensive online learning experience with various features and a user-friendly interface.
+Welcome to the TestEagles eLearning Platform repository! 
+This project aims to provide a comprehensive online learning experience with various features and a user-friendly interface.
 
 ## Features
 
